@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="user" class="cn.edu.xyc.bean.User">
+        <property name="uId" value="1"></property>
+        <property name="uName" value="张三"></property>
+        <property name="company" ref="company"></property>
+    </bean>
+    <!--  使用"<![CDATA[]]"方法来将特殊符号进行转义  -->
+    <bean id="company" class="cn.edu.xyc.bean.Company">
+        <property name="cId" value="1"></property>
+        <property name="cName">
+            <value>
+                <![CDATA[<技术部>]]>
+            </value>
+        </property>
+    </bean>
+</beans>
